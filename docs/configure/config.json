@@ -1,0 +1,23 @@
+{
+    "HEARTBEAT": {
+        "interval": 3
+    },
+    "LOG": {
+        "console": false,
+        "level": "DEBUG",
+        "path": "/var/log/servers/aioquant",
+        "name": "quant.log",
+        "clear": true,
+        "backup_count": 5
+    },
+    "RABBITMQ": {
+        "host": "127.0.0.1",
+        "port": 5672,
+        "username": "test",
+        "password": "123456"
+    },
+    "PROXY": "http://127.0.0.1:1087",
+
+    "name": "my test name",
+    "abc": 123456
+}

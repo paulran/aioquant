@@ -1,0 +1,8 @@
+.idea
+*.pyc
+.DS_Store
+build
+dist
+MANIFEST
+test
+scripts
