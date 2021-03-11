@@ -3,6 +3,9 @@
 """
 Base on the public infos about aioquant project.
 
+# 2021-03-11 add some functions and update some functions.
+* The reason: https://binance-docs.github.io/apidocs/spot/cn/#185368440e
+
 Reference:
 * Binance API: https://binance-docs.github.io/apidocs/spot/cn/#185368440e
 * Binance SPOT API on GitHub: https://github.com/binance/binance-spot-api-docs/blob/master/rest-api_CN.md
@@ -66,7 +69,7 @@ class BinanceRestAPI:
             success: Success results, otherwise it's None.
             error: Error information, otherwise it's None.
         """
-        uri = "/api/v1/time"
+        uri = "/api/v3/time"
         success, error = await self.request("GET", uri)
         return success, error
 
@@ -77,7 +80,7 @@ class BinanceRestAPI:
             success: Success results, otherwise it's None.
             error: Error information, otherwise it's None.
         """
-        uri = "/api/v1/exchangeInfo"
+        uri = "/api/v3/exchangeInfo"
         success, error = await self.request("GET", uri)
         return success, error
 
@@ -91,25 +94,25 @@ class BinanceRestAPI:
             success: Success results, otherwise it's None.
             error: Error information, otherwise it's None.
         """
-        uri = "/api/v1/ticker/24hr"
+        uri = "/api/v3/ticker/24hr"
         params = {
             "symbol": symbol
         }
         success, error = await self.request("GET", uri, params=params)
         return success, error
 
-    async def get_orderbook(self, symbol, limit=10):
+    async def get_orderbook(self, symbol, limit: int=100):
         """Get orderbook.
 
         Args:
             symbol: Symbol name, e.g. `BTCUSDT`.
-            limit: Number of results per request. (default 10)
+            limit: Number of results per request. (default 100, max 5000. enum: 5, 10, 20, 50, 100, 500, 1000, 5000)
 
         Returns:
             success: Success results, otherwise it's None.
             error: Error information, otherwise it's None.
         """
-        uri = "/api/v1/depth"
+        uri = "/api/v3/depth"
         params = {
             "symbol": symbol,
             "limit": limit
@@ -232,7 +235,7 @@ class BinanceRestAPI:
             success: Success results, otherwise it's None.
             error: Error information, otherwise it's None.
         """
-        uri = "/api/v1/userDataStream"
+        uri = "/api/v3/userDataStream"
         success, error = await self.request("POST", uri)
         return success, error
 
@@ -246,7 +249,7 @@ class BinanceRestAPI:
             success: Success results, otherwise it's None.
             error: Error information, otherwise it's None.
         """
-        uri = "/api/v1/userDataStream"
+        uri = "/api/v3/userDataStream"
         params = {
             "listenKey": listen_key
         }
