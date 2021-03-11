@@ -271,6 +271,56 @@ class BinanceRestAPI:
         success, error = await self.request("DELETE", uri, params=params)
         return success, error
 
+    async def get_klines(self, symbol: str, interval: str = "1m", start: int=0, end: int=0, limit: int=500):
+        """Get Kline information.
+
+        Args:
+            symbol: Symbol name, e.g. `BTCUSDT`.
+            interval: Kline interval type, valid values: 1m, 3m, 5m, 15m, 30m, 1h, 2h, 4h, 6h, 8h, 12h, 1d, 3d, 1w, 1M
+            start: Start timestamp
+            end: End timestamp
+            limit: Number of results per request. (Default 500, max 1000.)
+
+        Returns:
+            success: Success results, otherwise it's None.
+            error: Error information, otherwise it's None.
+
+        Notes:
+            If start and end time are not sent, the most recent klines are returned.
+        """
+        uri = "/api/v3/klines"
+        params = {
+            "symbol": symbol,
+            "interval": interval,
+            "limit": limit,
+        }
+        if start and end:
+            params["startTime"] = start
+            params["endTime"] = end
+
+        success, error = await self.request("GET", uri, params=params)
+        return success, error
+
+    async def get_latest_trade(self, symbol: str, limit: int=500):
+        """Get latest trade.
+
+        Args:
+            symbol: Symbol name, e.g. `BTCUSDT`.
+            limit: Number of results per request. (Default 500, max 1000.)
+
+        Returns:
+            success: Success results, otherwise it's None.
+            error: Error information, otherwise it's None.
+        """
+        uri = "/api/v3/trades"
+        params = {
+            "symbol": symbol,
+            "limit": limit,
+        }
+
+        success, error = await self.request("GET", uri, params=params)
+        return success, error
+
     async def request(self, method, uri, params=None, body=None, headers=None, auth=False):
         """Do HTTP request.
 
