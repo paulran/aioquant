@@ -1,12 +1,11 @@
 # -*- coding:utf-8 -*-
 
 """
-Binance Trade module.
-https://github.com/binance-exchange/binance-official-api-docs/blob/master/rest-api.md
+Base on the public infos about aioquant project.
 
-Author: HuangTao
-Date:   2018/08/09
-Email:  huangtao@ifclover.com
+Reference:
+Binance API: https://binance-docs.github.io/apidocs/spot/cn/#185368440e
+Binance SPOT API on GitHub: https://github.com/binance/binance-spot-api-docs/blob/master/rest-api_CN.md
 """
 
 import json
