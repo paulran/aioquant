@@ -4,8 +4,8 @@
 Base on the public infos about aioquant project.
 
 Reference:
-Binance API: https://binance-docs.github.io/apidocs/spot/cn/#185368440e
-Binance SPOT API on GitHub: https://github.com/binance/binance-spot-api-docs/blob/master/rest-api_CN.md
+* Binance API: https://binance-docs.github.io/apidocs/spot/cn/#185368440e
+* Binance SPOT API on GitHub: https://github.com/binance/binance-spot-api-docs/blob/master/rest-api_CN.md
 """
 
 import json
