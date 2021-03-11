@@ -301,6 +301,26 @@ class BinanceRestAPI:
         success, error = await self.request("GET", uri, params=params)
         return success, error
 
+    async def get_latest_trade(self, symbol: str, limit: int=500):
+        """Get latest trade.
+
+        Args:
+            symbol: Symbol name, e.g. `BTCUSDT`.
+            limit: Number of results per request. (Default 500, max 1000.)
+
+        Returns:
+            success: Success results, otherwise it's None.
+            error: Error information, otherwise it's None.
+        """
+        uri = "/api/v3/trades"
+        params = {
+            "symbol": symbol,
+            "limit": limit,
+        }
+
+        success, error = await self.request("GET", uri, params=params)
+        return success, error
+
     async def request(self, method, uri, params=None, body=None, headers=None, auth=False):
         """Do HTTP request.
 
