@@ -23,12 +23,12 @@
 
 - `AIOQuant` 交易系统各大模块如下：
 <p>
-  <img src ="https://open-space.ifclover.com/aioq_framework2.png" align="middle"/>
+  <img src ="./docs/images/aioq_framework2.png" align="middle"/>
 </p>
 
 - `AIOQuant` 分布式管理交易系统
 <p>
-  <img src ="https://open-space.ifclover.com/aioq_framework.jpg" align="middle"/>
+  <img src ="./docs/images/aioq_framework.jpg" align="middle"/>
 </p>
 
 
@@ -92,10 +92,3 @@ python src/main.py config.json
 - [日志打印](docs/others/logger.md)
 - [定时任务](docs/others/tasks.md)
 
-
-### 有任何问题，欢迎联系
-
-- 微信二维码
-<p>
-  <img src ="https://open-space.ifclover.com/wx_qrcode.jpeg" align="middle" width="250" height="250"/>
-</p>
