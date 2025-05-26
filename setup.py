@@ -5,23 +5,24 @@ from distutils.core import setup
 
 setup(
     name="aioquant",
-    version="1.0.0",
+    version="1.2.0",
     packages=[
         "aioquant",
         "aioquant.utils",
         "aioquant.platform",
+        "aioquant.markets",
     ],
     description="Asynchronous event I/O driven quantitative trading framework.",
-    url="https://github.com/JiaoziMatrix/aioquant",
-    author="HuangTao",
-    author_email="huangtao@ifclover.com",
+    url="https://github.com:paulran/aioquant",
+    author="PaulRan",
+    author_email="xiaomaoln@gmail.com",
     license="MIT",
     keywords=[
         "aioquant", "quant", "framework", "async", "asynchronous", "digiccy", "digital", "currency", "marketmaker",
         "binance", "okex", "huobi", "bitmex", "deribit", "kraken", "gemini", "kucoin"
     ],
     install_requires=[
-        "aiohttp==3.6.2",
-        "aioamqp==0.13.0"
+        "aiohttp",
+        "aioamqp"
     ],
 )

@@ -1,0 +1,31 @@
+{
+    "LOG": {
+        "console": true,
+        "level": "DEBUG",
+        "path": "./logs",
+        "name": "market.log",
+        "clear": true,
+        "backup_count": 5
+    },
+    "RABBITMQ": {
+        "host": "127.0.0.1",
+        "port": 5672,
+        "username": "guest",
+        "password": "guest"
+    },
+    "PROXY": "http://172.27.0.1:10808",
+    "MARKETS": {
+        "binance": {
+            "symbols": [
+                "BTC/USDT",
+                "ETH/USDT",
+                "ETH/BTC"
+            ],
+            "channels": [
+                "kline",
+                "orderbook",
+                "trade"
+            ]
+        }
+    }
+}

@@ -1,8 +1,9 @@
+.vscode
 .idea
 *.pyc
-.DS_Store
+.python-version
 build
 dist
+aioquant.egg-info
 MANIFEST
 test
-scripts
